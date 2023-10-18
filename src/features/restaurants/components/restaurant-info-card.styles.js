@@ -5,15 +5,15 @@ import { Card } from "react-native-paper";
 import { Text } from "../../../components/typography/text.component";
 
 export const RestaurantCard = styled(Card)`
-    background-color: ${({ theme }) => theme.colors.bg.primary};
-    margin: ${({ theme }) => theme.space[3]};
+    background-color: ${({ theme }) => theme.colors.bg.secondary};
+    margin: ${({ theme }) => theme.space[3]} 0;
     margin-bottom: ${({ theme }) => theme.space[3]};
 `
 
 export const RestaurantCardCover = styled(Card.Cover)`
 padding: ${({ theme }) => theme.space[3]};
 padding-bottom: 0;
-background-color: ${({ theme }) => theme.colors.bg.primary};
+background-color: ${({ theme }) => theme.colors.bg.secondary};
 `
 
 export const Info = styled(View)`
@@ -38,7 +38,8 @@ export const Section = styled(View)`
 export const Rating = styled(View)`
     display: flex;
     flex-direction: row;
-    padding-top: ${({ theme }) => theme.space[1]};
+    padding-top: ${({ theme }) => theme.space[3]};
+    padding-bottom: ${({ theme }) => theme.space[2]};
     `
 
 export const SectionEnd = styled(View)`
@@ -49,6 +50,6 @@ export const SectionEnd = styled(View)`
 `
 
 export const Icon = styled(Image)`
-    width: 15px;
-    height: 15px;
+    width: 27px;
+    height: 27px;
 `

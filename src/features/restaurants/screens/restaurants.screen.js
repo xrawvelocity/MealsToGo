@@ -1,28 +1,27 @@
-import React from "react"
-import { View, SafeAreaView, StatusBar, FlatList } from 'react-native';
-import { Searchbar } from 'react-native-paper';
+import React, { useContext } from "react"
+import { View, FlatList } from 'react-native';
+import { ActivityIndicator, Searchbar, Colors } from 'react-native-paper';
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import styled from "styled-components/native";
 import { list } from "../../../data/list"
-
-const SafeArea = styled(SafeAreaView)`
-    flex: 1;
-    flex-direction: column;
-    ${StatusBar.currentHeight && `margin-top: ${StatusBar.currentHeight}px`};
-`;
+import { SafeArea } from "../../../utils/safe-are.components";
+import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 
 const SearchContainer = styled(View)`
-    padding: ${({ theme }) => theme.space[4]} ${({ theme }) => theme.space[3]};
+    padding: 0 0 ${({ theme }) => theme.space[4]} 0;
     justify-content: center;
 `;
 
-const ListContainer = styled(FlatList)`
-
-`;
+const Loading = styled(ActivityIndicator)`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -5px;
+`
 
 export const RestaurantsScreen = () => {
+    const { restaurants, isLoading, error } = useContext(RestaurantsContext);
     const [searchQuery, setSearchQuery] = React.useState('');
-
     const onChangeSearch = query => setSearchQuery(query);
 
     return (
@@ -34,16 +33,19 @@ export const RestaurantsScreen = () => {
                     value={searchQuery}
                 />
             </SearchContainer>
-            <ListContainer
-                data={list}
-                renderItem={({ item }) => {
-                    return (
-                        <RestaurantInfoCard restaurant={{ ...item }} />
-                    )
-                }
-                }
-                keyExtractor={item => item.id}
-            />
+            {isLoading ?
+                <Loading size={50} animating={true} color={"tomato"} />
+                :
+                <FlatList
+                    data={restaurants}
+                    renderItem={({ item }) => {
+                        return (
+                            <RestaurantInfoCard restaurant={{ ...item }} />
+                        )
+                    }
+                    }
+                    keyExtractor={item => item.id}
+                />}
         </SafeArea>
     )
 }
