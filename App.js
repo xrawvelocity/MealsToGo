@@ -13,6 +13,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { BlurView } from 'expo-blur';
 import { StyleSheet } from 'react-native';
 import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context.js';
+import { LocationContextProvider } from './src/services/location/location.context.js';
 
 
 const Map = () => {
@@ -70,15 +71,17 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <RestaurantsContextProvider>
-          <NavigationContainer style={{ padding: 30 }}>
-            <Tab.Navigator screenOptions={createScreenOptions}>
-              <Tab.Screen name="Restaurants" component={Restaurants} options={{ headerShown: false }} />
-              <Tab.Screen name="Map" component={Map} options={{ headerShown: false }} />
-              <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
-            </Tab.Navigator>
-          </NavigationContainer>
-        </RestaurantsContextProvider>
+        <LocationContextProvider>
+          <RestaurantsContextProvider>
+            <NavigationContainer style={{ padding: 30 }}>
+              <Tab.Navigator screenOptions={createScreenOptions}>
+                <Tab.Screen name="Restaurants" component={Restaurants} options={{ headerShown: false }} />
+                <Tab.Screen name="Map" component={Map} options={{ headerShown: false }} />
+                <Tab.Screen name="Settings" component={Settings} options={{ headerShown: false }} />
+              </Tab.Navigator>
+            </NavigationContainer>
+          </RestaurantsContextProvider>
+        </LocationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="dark" />
     </>
