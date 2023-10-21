@@ -1,5 +1,5 @@
 import React, { useContext } from "react"
-import { View, FlatList } from 'react-native';
+import { View, FlatList, Pressable } from 'react-native';
 import { ActivityIndicator, Searchbar, Colors } from 'react-native-paper';
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
 import styled from "styled-components/native";
@@ -14,7 +14,7 @@ const Loading = styled(ActivityIndicator)`
     margin-left: -5px;
 `
 
-export const RestaurantsScreen = () => {
+export const RestaurantsScreen = ({ navigation }) => {
     const { restaurants, isLoading, error } = useContext(RestaurantsContext);
 
     return (
@@ -27,7 +27,10 @@ export const RestaurantsScreen = () => {
                     data={restaurants}
                     renderItem={({ item }) => {
                         return (
-                            <RestaurantInfoCard restaurant={{ ...item }} />
+                            <Pressable onPress={() => navigation.navigate("RestaurantDetail")}>
+                                <RestaurantInfoCard restaurant={{ ...item }} />
+
+                            </Pressable>
                         )
                     }
                     }

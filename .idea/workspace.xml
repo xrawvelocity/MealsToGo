@@ -7,11 +7,9 @@
     <list default="true" id="72a59f74-c4f5-4580-b96d-a456b8f36a38" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/features/restaurants/components/restaurant-info-card.component.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/restaurants/components/restaurant-info-card.component.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/features/restaurants/screens/restaurants.screen.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/features/restaurants/screens/restaurants.screen.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/restaurants/mock/antwerp.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/restaurants/mock/antwerp.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/restaurants/restaurants.context.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/restaurants/restaurants.context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/services/restaurants/restaurants.service.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/services/restaurants/restaurants.service.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
