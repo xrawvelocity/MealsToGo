@@ -6,12 +6,7 @@ import {
 } from "@react-navigation/stack";
 
 import { RestaurantsScreen } from "../../features/restaurants/screens/restaurants.screen";
-import { Text } from "../../components/typography/text.component";
-// import { RestaurantDetailScreen } from "../../features/restaurants/screens/restaurant-detail.screen";
-
-const RestaurantDetailScreen = () => {
-    return <Text>Detail</Text>
-}
+import { RestaurantDetailScreen } from "../../features/restaurants/screens/restaurant-detail.screen";
 
 const RestaurantStack = createStackNavigator();
 
@@ -19,7 +14,11 @@ export const RestaurantsNavigator = () => {
     return (
         <RestaurantStack.Navigator
             screenOptions={{
+                presentation: "transparentModal",
                 headerShown: false,
+                gestureEnabled: true,
+                gestureResponseDistance: 400,
+                gestureVelocityImpact: 1,
                 ...TransitionPresets.ModalPresentationIOS,
             }}
         >

@@ -1,21 +1,13 @@
 import React, { useContext } from "react"
-import { View, FlatList, Pressable } from 'react-native';
-import { ActivityIndicator, Searchbar, Colors } from 'react-native-paper';
+import { FlatList, Pressable } from 'react-native';
 import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
-import styled from "styled-components/native";
-import { SafeArea } from "../../../utils/safe-are.components";
+import { SafeArea } from "../../../components/utility/safe-are.components";
 import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
 import { Search } from "../components/search.component";
-
-const Loading = styled(ActivityIndicator)`
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-left: -5px;
-`
+import { Loading } from "../../../components/utility/loading.component";
 
 export const RestaurantsScreen = ({ navigation }) => {
-    const { restaurants, isLoading, error } = useContext(RestaurantsContext);
+    const { restaurants, isLoading } = useContext(RestaurantsContext);
 
     return (
         <SafeArea>
@@ -27,9 +19,8 @@ export const RestaurantsScreen = ({ navigation }) => {
                     data={restaurants}
                     renderItem={({ item }) => {
                         return (
-                            <Pressable onPress={() => navigation.navigate("RestaurantDetail")}>
+                            <Pressable onPress={() => navigation.navigate("RestaurantDetail", { restaurant: { ...item }, isLoading })}>
                                 <RestaurantInfoCard restaurant={{ ...item }} />
-
                             </Pressable>
                         )
                     }

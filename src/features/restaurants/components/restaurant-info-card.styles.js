@@ -11,9 +11,9 @@ export const RestaurantCard = styled(Card)`
 `
 
 export const RestaurantCardCover = styled(Card.Cover)`
-padding: ${({ theme }) => theme.space[3]};
-padding-bottom: 0;
-background-color: ${({ theme }) => theme.colors.bg.secondary};
+    padding: ${({ theme }) => theme.space[3]};
+    padding-bottom: 0;
+    background-color: ${({ theme }) => theme.colors.bg.secondary};
 `
 
 export const Info = styled(View)`
@@ -50,6 +50,7 @@ export const SectionEnd = styled(View)`
 `
 
 export const Icon = styled(Image)`
-    width: 27px;
-    height: 27px;
+    width: 20px;
+    height: 20px;
+    tint-color: tomato;
 `
