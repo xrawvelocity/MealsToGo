@@ -3,6 +3,6 @@ import { CompactRestaurantInfo } from '../../../components/restaurant/compact-re
 
 export const MapCallout = ({ restaurant }) => {
     return (
-        <CompactRestaurantInfo restaurant={restaurant} />
+        <CompactRestaurantInfo useWebView={true} restaurant={restaurant} />
     )
 }

@@ -42,7 +42,7 @@ const variants = {
     caption,
     error,
     hint,
-    secondary
+    secondary,
 };
 
 export const Text = styled.Text`

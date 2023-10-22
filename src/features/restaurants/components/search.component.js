@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Searchbar } from "react-native-paper";
 import { LocationContext } from "../../../services/location/location.context";
 import styled from "styled-components/native";
@@ -9,9 +9,9 @@ const SearchContainer = styled(View)`
     justify-content: center;
 `;
 
-export const Search = () => {
+export const Search = ({ favoritesToggled, onFavoritesToggled }) => {
     const { keyword, search } = useContext(LocationContext)
-    const [searchKeyword, setSearchKeyword] = React.useState(keyword);
+    const [searchKeyword, setSearchKeyword] = useState(keyword);
 
     useEffect(() => {
         setSearchKeyword(keyword)
@@ -20,6 +20,8 @@ export const Search = () => {
     return (
         <SearchContainer>
             <Searchbar
+                icon={favoritesToggled ? "heart" : "heart-outline"}
+                onIconPress={onFavoritesToggled}
                 placeholder="Search for a location"
                 value={searchKeyword}
                 onSubmitEditing={() => {

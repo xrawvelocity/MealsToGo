@@ -54,7 +54,7 @@ export const MapScreen = ({ navigation }) => {
                                 longitude: restaurant.geometry.location.lng,
                             }}
                         >
-                            <Callout onPress={() => {
+                            <Callout tooltip={true} onPress={() => {
                                 navigation.navigate("RestaurantDetail", { restaurant })
                             }}>
                                 <MapCallout restaurant={restaurant} />
