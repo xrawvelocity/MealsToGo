@@ -20,7 +20,7 @@ const Settings = () => {
 }
 
 const TabsContainer = styled(View)`
-    background-color: ${({ theme }) => theme.colors.bg.secondary};
+    background-color: ${({ theme }) => theme.colors.bg.primary};
     height: 100%;
     width: 100%;
 `
@@ -38,7 +38,7 @@ const createScreenOptions = ({ route }) => {
     return {
         tabBarIcon: ({ size, color }) => <Ionicons name={iconName} size={size} color={color} />,
         tabBarActiveTintColor: 'tomato',
-        tabBarInactiveTintColor: 'gray',
+        tabBarInactiveTintColor: '#ccc',
         tabBarStyle: { position: 'absolute', height: 70, paddingBottom: 10 },
         tabBarBackground: () => (
             <TabsContainer />

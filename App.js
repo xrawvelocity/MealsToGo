@@ -30,7 +30,7 @@ export default function App() {
           </RestaurantsContextProvider>
         </LocationContextProvider>
       </ThemeProvider>
-      <ExpoStatusBar style="dark" />
+      <ExpoStatusBar style="light" backgroundColor="#111111" />
     </>
   );
 }

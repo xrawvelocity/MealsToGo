@@ -15,11 +15,11 @@ const StyledAccordion = styled(List.Accordion)`
 
 StyledAccordion.defaultProps = {
     rippleColor: '#ff634720',
-    theme: { colors: { primary: 'tomato', background: '#fff' } }
+    theme: { colors: { primary: 'tomato', surfaceDisabled: '#c3cc', background: '#fff' } }
 }
 
 const Bar = styled(View)`
-    background-color: ${({ theme }) => theme.colors.bg.secondary};
+    background-color: ${({ theme }) => theme.colors.ui.secondary};
     width: 50px;
     height: 5px;
     border-radius: 10px;
@@ -49,9 +49,7 @@ export const RestaurantDetailScreen = ({ route }) => {
                         >
                             <StyledAccordion
                                 title={<Text>Breakfast</Text>}
-                                left={props => {
-                                    return <List.Icon {...props} icon="bread-slice" />
-                                }}
+                                left={props => <List.Icon {...props} icon="bread-slice" />}
                                 expanded={breakfastExpanded}
                                 onPress={() => setBreakfastExpanded(!breakfastExpanded)}
                             >

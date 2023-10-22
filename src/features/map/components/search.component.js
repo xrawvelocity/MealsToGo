@@ -5,8 +5,13 @@ import styled from "styled-components/native";
 import { View } from "react-native";
 
 const SearchContainer = styled(View)`
-    padding: 0 0 ${({ theme }) => theme.space[4]} 0;
+    padding: ${({ theme }) => theme.space[3]} ${({ theme }) => theme.space[3]} 0;
+    margin-top: ${({ theme }) => theme.space[2]};
     justify-content: center;
+    position: absolute;
+    top: ${({ theme }) => theme.space[4]};
+    width: 100%;
+    z-index: 999;
 `;
 
 export const Search = () => {
@@ -21,6 +26,7 @@ export const Search = () => {
         <SearchContainer>
             <Searchbar
                 placeholder="Search for a location"
+                icon="map"
                 value={searchKeyword}
                 onSubmitEditing={() => {
                     search(searchKeyword);
