@@ -6,6 +6,7 @@ import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/osw
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
 import { Navigator } from './src/infrastructure/navigation/index.js';
 import { AuthenticationContextProvider } from './src/services/authentication/authentication.context.js';
+import 'react-native-gesture-handler'
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
