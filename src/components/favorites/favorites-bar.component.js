@@ -4,7 +4,7 @@ import { CompactRestaurantInfo } from "../restaurant/compact-restaurant-info.com
 import { ScrollView, TouchableOpacity, View } from "react-native";
 import { Text } from "../typography/text.component";
 import styled from "styled-components";
-import { Spacer } from "../spacer/spacer";
+import { Spacer } from "../spacer/spacer.component";
 
 const FavoritesWrapper = styled(View)`
   padding-bottom: ${({ theme }) => theme.space[3]};

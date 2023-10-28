@@ -9,12 +9,20 @@ const defaultTextStyles = (theme) => `
   margin-bottom: 0px;
 `;
 
+const title = (theme) => `
+    font-size: ${theme.fontSizes.h3};
+    color: ${theme.colors.text.secondary};
+    font-weight: ${theme.fontWeights.bold};
+    font-family: ${theme.fonts.heading};
+    letter-spacing: -2px;
+`;
+
 const body = (theme) => `
     font-size: ${theme.fontSizes.body};
 `;
 
 const hint = (theme) => `
-    font-size: ${theme.fontSizes.body};
+    font-size: ${theme.fontSizes.label};
 `;
 
 const secondary = (theme) => `
@@ -37,6 +45,7 @@ const label = (theme) => `
 `;
 
 const variants = {
+    title,
     body,
     label,
     caption,

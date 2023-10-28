@@ -4,7 +4,7 @@ import WebView from "react-native-webview";
 import { Platform, View, Image } from "react-native";
 
 import { Text } from "../typography/text.component";
-import { Spacer } from "../spacer/spacer";
+import { Spacer } from "../spacer/spacer.component";
 
 const Item = styled(View)`
   padding: 15px;

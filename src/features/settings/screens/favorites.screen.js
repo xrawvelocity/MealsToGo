@@ -1,23 +1,20 @@
-import React, { useContext, useState } from "react";
-import { FlatList, Pressable } from 'react-native';
-import { RestaurantInfoCard } from "../components/restaurant-info-card.component";
+import React from "react";
+import { RestaurantInfoCard } from "../../restaurants/components/restaurant-info-card.component";
+import { FavoritesContext } from "../../../services/favorites/favorites.context";
 import { SafeArea } from "../../../components/utility/safe-are.components";
-import { RestaurantsContext } from "../../../services/restaurants/restaurants.context";
-import { Search } from "../components/search.component";
 import { Loading } from "../../../components/utility/loading.component";
-import { FavoritesBar } from "../../../components/favorites/favorites-bar.component";
+import { FlatList } from "react-native-gesture-handler";
+import { Pressable } from "react-native";
 
-export const RestaurantsScreen = ({ navigation }) => {
-    const { restaurants, isLoading } = useContext(RestaurantsContext);
-    const [favoritesToggled, setFavoritesToggled] = useState(false);
+export const FavoritesScreen = ({ navigation }) => {
+    const { favorites } = useContext(FavoritesContext);
+
+    if (!favorites.length) {
+        return null;
+    }
 
     return (
         <SafeArea>
-            <Search
-                favoritesToggled={favoritesToggled}
-                onFavoritesToggled={() => setFavoritesToggled(!favoritesToggled)}
-            />
-            {favoritesToggled && <FavoritesBar navigation={navigation} />}
             {isLoading ?
                 <Loading size={50} animating={true} color={"tomato"} />
                 :

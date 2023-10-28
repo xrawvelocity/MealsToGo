@@ -4,10 +4,8 @@ import { ThemeProvider } from 'styled-components/native';
 import { theme } from './src/infrastructure/theme/index.js';
 import { useFonts as useOswald, Oswald_400Regular } from '@expo-google-fonts/oswald';
 import { useFonts as useLato, Lato_400Regular } from '@expo-google-fonts/lato';
-import { RestaurantsContextProvider } from './src/services/restaurants/restaurants.context.js';
-import { LocationContextProvider } from './src/services/location/location.context.js';
 import { Navigator } from './src/infrastructure/navigation/index.js';
-import { FavoritesContextProvider } from './src/services/favorites/favorites.context.js';
+import { AuthenticationContextProvider } from './src/services/authentication/authentication.context.js';
 
 export default function App() {
   const [oswaldLoaded] = useOswald({
@@ -25,13 +23,9 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
-        <FavoritesContextProvider>
-          <LocationContextProvider>
-            <RestaurantsContextProvider>
-              <Navigator />
-            </RestaurantsContextProvider>
-          </LocationContextProvider>
-        </FavoritesContextProvider>
+        <AuthenticationContextProvider>
+          <Navigator />
+        </AuthenticationContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="light" backgroundColor="#111111" />
     </>
